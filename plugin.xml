@@ -1,0 +1,19 @@
+<plugin name='wave' version='0.3' grailsVersion='1.1.1 &gt; *'>
+  <author>David Trattnig</author>
+  <authorEmail>david.trattnig@gmail.com</authorEmail>
+  <title>Google Wave API plugin for Grails</title>
+  <description>\
+A plugin that integrates the Google Wave API with Grails"
+</description>
+  <documentation>http://grails.org/plugin/wave</documentation>
+  <resources>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+    <resource>WaveDefaultUrlMappings</resource>
+    <resource>WaveRobotBaseController</resource>
+    <resource>org.bitfusion.grails.wave.WaveService</resource>
+    <resource>TestRobotImplService</resource>
+    <resource>WaveEmbedTagLib</resource>
+  </resources>
+  <dependencies />
+</plugin>

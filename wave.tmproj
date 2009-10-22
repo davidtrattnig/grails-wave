@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>grails-app/taglib/WaveEmbedTagLib.groovy</string>
+	<string>grails-app/conf/BuildConfig.groovy</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -77,6 +77,20 @@
 	<integer>287</integer>
 	<key>metaData</key>
 	<dict>
+		<key>grails-app/conf/BuildConfig.groovy</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>30</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>grails-app/conf/UrlMappings.groovy</key>
 		<dict>
 			<key>caret</key>
@@ -168,9 +182,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>27</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>53</integer>
+				<integer>44</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -343,6 +357,7 @@
 		<string>src/java/java/org/bitfusion/grails/wave/GrailsWaveRobot.java</string>
 		<string>grails-app/services/TestRobotImplService.groovy</string>
 		<string>grails-app/taglib/WaveEmbedTagLib.groovy</string>
+		<string>grails-app/conf/BuildConfig.groovy</string>
 		<string>test/reports/TESTS-TestSuites.xml</string>
 		<string>grails-app/services/org/bitfusion/grails/wave/WaveService.groovy</string>
 		<string>test/unit/WaveEmbedTagLibTests.groovy</string>

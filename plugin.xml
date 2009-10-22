@@ -7,7 +7,6 @@ A plugin that integrates the Google Wave API with Grails"
 </description>
   <documentation>http://grails.org/plugin/wave</documentation>
   <resources>
-    <resource>BuildConfig</resource>
     <resource>DataSource</resource>
     <resource>UrlMappings</resource>
     <resource>WaveDefaultUrlMappings</resource>

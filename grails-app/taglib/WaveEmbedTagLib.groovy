@@ -25,7 +25,7 @@ class WaveEmbedTagLib {
 	 * Tag which has to be included in the head of a page 
      * necessary to correctly load and embed waves.
 	 *
-	 * @provider wave provider url; by default google wave sandbox (optional)
+	 * @provider wave provider url; by default value of config.grails.plugin.wave.defaultProvider
      */
 	def waveHead = { attrs ->
 		

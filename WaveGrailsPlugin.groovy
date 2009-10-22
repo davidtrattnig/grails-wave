@@ -11,6 +11,7 @@ class WaveGrailsPlugin {
     def pluginExcludes = [
 	    "grails-app/views/error.gsp",
 		"lib/tagsoup-1.2.jar",
+		"lib/svnkit.jar",
 		"grails-app/service/TestRobotService.groovy"
     ]
 

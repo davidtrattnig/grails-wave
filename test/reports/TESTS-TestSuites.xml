@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="david.local" id="0" name="TestRobotImplServiceTests" package="" tests="1" time="0.26" timestamp="2009-10-12T18:45:59">
+  <testsuite errors="0" failures="0" hostname="david.local" id="0" name="TestRobotImplServiceTests" package="" tests="1" time="0.254" timestamp="2009-10-23T14:29:03">
       <properties />
 
-      <testcase classname="TestRobotImplServiceTests" name="testRobotImpl" time="0.259" />
+      <testcase classname="TestRobotImplServiceTests" name="testRobotImpl" time="0.252" />
 
       <system-out><![CDATA[--Output from testRobotImpl--
 INFO (TestRobotImplService):  ROBOT Robbie ro Bot (v1.0): PROCESS EVENTS
@@ -14,16 +14,16 @@ INFO (TestRobotImplService):  eventsBundle - null
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="1" name="WaveEmbedTagLibTests" package="" tests="4" time="0.963" timestamp="2009-10-12T18:46:00">
+  <testsuite errors="0" failures="0" hostname="david.local" id="1" name="WaveEmbedTagLibTests" package="" tests="4" time="0.471" timestamp="2009-10-23T14:29:03">
       <properties />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveHead" time="0.935" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveHead" time="0.423" />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedInvalid" time="0.0090" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedInvalid" time="0.0080" />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedGeneral" time="0.012" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedGeneral" time="0.021" />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedWithCustomFrame" time="0.0070" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedWithCustomFrame" time="0.019" />
 
       <system-out><![CDATA[--Output from testWaveHead--
 scriptLine:
@@ -57,17 +57,17 @@ ERROR (WaveEmbedTagLib): missing wave id while embedding wave
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="2" name="WaveRobotBaseControllerTests" package="" tests="3" time="0.434" timestamp="2009-10-12T18:46:11">
+  <testsuite errors="0" failures="0" hostname="david.local" id="2" name="WaveRobotBaseControllerTests" package="" tests="3" time="0.217" timestamp="2009-10-23T14:29:14">
       <properties />
 
-      <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLwithoutActiveRobot" time="0.089" />
+      <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLwithoutActiveRobot" time="0.069" />
 
-      <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLResult" time="0.154" />
+      <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLResult" time="0.082" />
 
-      <testcase classname="WaveRobotBaseControllerTests" name="testRobotProfile" time="0.019" />
+      <testcase classname="WaveRobotBaseControllerTests" name="testRobotProfile" time="0.017" />
 
       <system-out><![CDATA[--Output from testCapabilitiesXMLwithoutActiveRobot--
-org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is defined--Output from testCapabilitiesXMLResult--
+--Output from testCapabilitiesXMLResult--
 tem:<?xmlversion="1.0"?><w:robotxmlns:w='http://wave.google.com/extensions/robots/1.0'><w:capabilities><w:capabilityname='BLIP_SUBMITTED'/></w:capabilities><w:profilename='RobbieroBot'imageurl='http://image.url'profileurl='http://test.profile'/><w:version>1.0</w:version></w:robot>
 res:<?xmlversion="1.0"?><w:robotxmlns:w='http://wave.google.com/extensions/robots/1.0'><w:capabilities><w:capabilityname='BLIP_SUBMITTED'/></w:capabilities><w:profilename='RobbieroBot'imageurl='http://image.url'profileurl='http://test.profile'/><w:version>1.0</w:version></w:robot>
 --Output from testRobotProfile--
@@ -89,17 +89,17 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.bitfusion.grails.wave.WaveService.getRobot(WaveService.groovy:64)
-	at org.bitfusion.grails.wave.WaveService$getRobot.callCurrent(Unknown Source)
+	at org.grails.plugins.wave.WaveService.getRobot(WaveService.groovy:64)
+	at org.grails.plugins.wave.WaveService$getRobot.callCurrent(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:147)
-	at org.bitfusion.grails.wave.WaveService.hasActiveRobot(WaveService.groovy:95)
-	at org.bitfusion.grails.wave.WaveService$hasActiveRobot.call(Unknown Source)
+	at org.grails.plugins.wave.WaveService.hasActiveRobot(WaveService.groovy:94)
+	at org.grails.plugins.wave.WaveService$hasActiveRobot.call(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:121)
-	at WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy:79)
+	at org.grails.plugins.wave.WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy:75)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -109,7 +109,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:151)
-	at WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy)
+	at org.grails.plugins.wave.WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -523,7 +523,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="3" name="WaveRobotFiltersTests" package="" tests="1" time="0.0040" timestamp="2009-10-12T18:46:01">
+  <testsuite errors="0" failures="0" hostname="david.local" id="3" name="WaveRobotFiltersTests" package="" tests="1" time="0.0040" timestamp="2009-10-23T14:29:04">
       <properties />
 
       <testcase classname="WaveRobotFiltersTests" name="testSomething" time="0.0040" />
@@ -535,22 +535,22 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="4" name="WaveServiceTests" package="" tests="4" time="0.047" timestamp="2009-10-12T18:46:11">
+  <testsuite errors="0" failures="0" hostname="david.local" id="4" name="WaveServiceTests" package="" tests="4" time="0.061" timestamp="2009-10-23T14:29:15">
       <properties />
 
-      <testcase classname="WaveServiceTests" name="testRobotWithoutRobotImpl" time="0.025" />
+      <testcase classname="WaveServiceTests" name="testRobotWithoutRobotImpl" time="0.033" />
 
-      <testcase classname="WaveServiceTests" name="testSimpleRobotRetrieval" time="0.0030" />
+      <testcase classname="WaveServiceTests" name="testSimpleRobotRetrieval" time="0.0020" />
 
-      <testcase classname="WaveServiceTests" name="testRobotRetrievalWithCustomBean" time="0.0090" />
+      <testcase classname="WaveServiceTests" name="testRobotRetrievalWithCustomBean" time="0.011" />
 
       <testcase classname="WaveServiceTests" name="testRobotRetrievalWithConfiguredBean" time="0.0010" />
 
       <system-out><![CDATA[--Output from testRobotWithoutRobotImpl--
-org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is definedorg.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is definedorg.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is defined--Output from testSimpleRobotRetrieval--
+--Output from testSimpleRobotRetrieval--
 --Output from testRobotRetrievalWithCustomBean--
-org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is definedloaded robot TestRobotImplService@1f43089e--Output from testRobotRetrievalWithConfiguredBean--
-loaded robot TestRobotImplService@1f43089e]]></system-out>
+loaded robot TestRobotImplService@5f9b1a0d--Output from testRobotRetrievalWithConfiguredBean--
+loaded robot TestRobotImplService@5f9b1a0d]]></system-out>
 
       <system-err><![CDATA[--Output from testRobotWithoutRobotImpl--
 org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is defined
@@ -564,7 +564,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
 	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:880)
 	at org.springframework.beans.factory.BeanFactory$getBean.call(Unknown Source)
-	at org.bitfusion.grails.wave.WaveService.getRobot(WaveService.groovy:64)
+	at org.grails.plugins.wave.WaveService.getRobot(WaveService.groovy:64)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -980,10 +980,10 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
 	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:880)
 	at org.springframework.beans.factory.BeanFactory$getBean.call(Unknown Source)
-	at org.bitfusion.grails.wave.WaveService.getRobot(WaveService.groovy:64)
-	at org.bitfusion.grails.wave.WaveService$getRobot.callCurrent(Unknown Source)
-	at org.bitfusion.grails.wave.WaveService.hasActiveRobot(WaveService.groovy:95)
-	at org.bitfusion.grails.wave.WaveService$hasActiveRobot.call(Unknown Source)
+	at org.grails.plugins.wave.WaveService.getRobot(WaveService.groovy:64)
+	at org.grails.plugins.wave.WaveService$getRobot.callCurrent(Unknown Source)
+	at org.grails.plugins.wave.WaveService.hasActiveRobot(WaveService.groovy:94)
+	at org.grails.plugins.wave.WaveService$hasActiveRobot.call(Unknown Source)
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:121)
@@ -1390,7 +1390,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
 	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:880)
 	at org.springframework.beans.factory.BeanFactory$getBean.call(Unknown Source)
-	at org.bitfusion.grails.wave.WaveService.getRobot(WaveService.groovy:64)
+	at org.grails.plugins.wave.WaveService.getRobot(WaveService.groovy:64)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -1808,7 +1808,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
 	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:880)
 	at org.springframework.beans.factory.BeanFactory$getBean.call(Unknown Source)
-	at org.bitfusion.grails.wave.WaveService.getRobot(WaveService.groovy:64)
+	at org.grails.plugins.wave.WaveService.getRobot(WaveService.groovy:64)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -2217,10 +2217,10 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="5" name="WaveUrlMappingTests" package="" tests="1" time="0.176" timestamp="2009-10-12T18:46:11">
+  <testsuite errors="0" failures="0" hostname="david.local" id="5" name="WaveUrlMappingTests" package="" tests="1" time="0.566" timestamp="2009-10-23T14:29:15">
       <properties />
 
-      <testcase classname="WaveUrlMappingTests" name="testRobotUrlMappings" time="0.171" />
+      <testcase classname="WaveUrlMappingTests" name="testRobotUrlMappings" time="0.563" />
 
       <system-out><![CDATA[--Output from testRobotUrlMappings--
 ]]></system-out>

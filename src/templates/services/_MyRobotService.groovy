@@ -1,4 +1,4 @@
-import org.bitfusion.grails.wave.*
+import org.grails.plugins.wave.*
 import com.google.wave.api.*
 
 /**

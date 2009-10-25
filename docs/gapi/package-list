@@ -1,7 +1,6 @@
 DefaultPackage
 grails-app.conf
 grails-app.controllers
-grails-app.services
 grails-app.services.org.bitfusion.grails.wave
 grails-app.taglib
 scripts

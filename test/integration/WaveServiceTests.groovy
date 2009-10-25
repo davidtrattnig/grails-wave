@@ -2,7 +2,7 @@ import grails.test.*
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
 import org.codehaus.groovy.grails.commons.ApplicationHolder as AH
 import com.google.wave.api.*
-import org.bitfusion.grails.wave.WaveService
+import org.grails.plugins.wave.WaveService
 
 class WaveServiceTests extends GroovyTestCase {
     protected void setUp() {

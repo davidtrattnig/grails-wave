@@ -12,7 +12,6 @@ class TestRobotImplServiceTests extends GrailsUnitTestCase {
     void testRobotImpl() {
 		mockLogging(TestRobotImplService, false)
 		def rob = new TestRobotImplService()
-		rob.processEvents(null) //stupid?
-	
+		rob.processEvents(null) //TODO stupid?
     }
 }

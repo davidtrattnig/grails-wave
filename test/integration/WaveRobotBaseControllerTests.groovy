@@ -1,7 +1,7 @@
 import grails.test.*
-import grails.converters.*;
-import com.google.wave.api.*;
-import org.bitfusion.grails.wave.WaveService
+import grails.converters.*
+import com.google.wave.api.*
+import org.grails.plugins.wave.*
 
 class WaveRobotBaseControllerTests extends GroovyTestCase {
     protected void setUp() {

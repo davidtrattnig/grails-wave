@@ -13,7 +13,7 @@ class WaveUrlMappingTests extends GrailsUrlMappingsTestCase {
 
     void testRobotUrlMappings() {
 
-		static mappings = [UrlMappings, WaveDefaultUrlMappings]
+		static mappings = [WaveDefaultUrlMappings]
 		assertForwardUrlMapping("/_wave/capabilities.xml", controller: "waveRobotBase", action: "capabilitiesXml")
 		assertForwardUrlMapping("/_wave/robot/jsonrpc", controller: "waveRobotBase", action: "processEvents")
 		assertForwardUrlMapping("/_wave/robot/profile", controller: "waveRobotBase", action: "robotProfile")

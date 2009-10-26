@@ -9,7 +9,7 @@ A plugin that integrates the Google Wave API with Grails"
   <resources>
     <resource>DataSource</resource>
     <resource>WaveDefaultUrlMappings</resource>
-    <resource>org.grails.plugins.wave.WaveRobotBaseController</resource>
+    <resource>WaveRobotBaseController</resource>
     <resource>org.grails.plugins.wave.WaveService</resource>
     <resource>TestRobotImplService</resource>
     <resource>WaveEmbedTagLib</resource>

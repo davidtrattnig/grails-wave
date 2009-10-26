@@ -39,7 +39,7 @@ class WaveService {
 	 */
 	public WaveService() {
 		
-		def name = CH.config.grails.plugin.wave.robotBeanName
+		def name = CH.config.grails.plugins.wave.robotBeanName
 		if (name) {
 			robotBeanName = name
 			log.debug "initialized robotBeanName from config property"

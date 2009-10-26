@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="david.local" id="0" name="TestRobotImplServiceTests" package="" tests="1" time="0.254" timestamp="2009-10-23T14:29:03">
+  <testsuite errors="0" failures="0" hostname="david.local" id="0" name="TestRobotImplServiceTests" package="" tests="1" time="0.539" timestamp="2009-10-26T11:28:09">
       <properties />
 
-      <testcase classname="TestRobotImplServiceTests" name="testRobotImpl" time="0.252" />
+      <testcase classname="TestRobotImplServiceTests" name="testRobotImpl" time="0.539" />
 
       <system-out><![CDATA[--Output from testRobotImpl--
 INFO (TestRobotImplService):  ROBOT Robbie ro Bot (v1.0): PROCESS EVENTS
@@ -14,22 +14,22 @@ INFO (TestRobotImplService):  eventsBundle - null
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="1" name="WaveEmbedTagLibTests" package="" tests="4" time="0.471" timestamp="2009-10-23T14:29:03">
+  <testsuite errors="0" failures="0" hostname="david.local" id="1" name="WaveEmbedTagLibTests" package="" tests="4" time="0.981" timestamp="2009-10-26T11:28:10">
       <properties />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveHead" time="0.423" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveHead" time="0.935" />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedInvalid" time="0.0080" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedInvalid" time="0.016" />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedGeneral" time="0.021" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedGeneral" time="0.013" />
 
-      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedWithCustomFrame" time="0.019" />
+      <testcase classname="WaveEmbedTagLibTests" name="testWaveEmbedWithCustomFrame" time="0.017" />
 
       <system-out><![CDATA[--Output from testWaveHead--
 scriptLine:
 scriptLine:
 				function loadWave(waveId, frameId, bgcolor, color, font, fontsize) {
-	    			var wavePanel = new WavePanel("http://default.provider");
+	    			var wavePanel = new WavePanel("[:]");
 					wavePanel.loadWave(waveId);
 					wavePanel.setUIConfig(bgcolor, color, font, fontsize);
 	    			wavePanel.init(document.getElementById(frameId));
@@ -57,14 +57,14 @@ ERROR (WaveEmbedTagLib): missing wave id while embedding wave
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="2" name="WaveRobotBaseControllerTests" package="" tests="3" time="0.217" timestamp="2009-10-23T14:29:14">
+  <testsuite errors="0" failures="0" hostname="david.local" id="2" name="WaveRobotBaseControllerTests" package="" tests="3" time="1.215" timestamp="2009-10-26T11:29:02">
       <properties />
 
       <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLwithoutActiveRobot" time="0.069" />
 
-      <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLResult" time="0.082" />
+      <testcase classname="WaveRobotBaseControllerTests" name="testCapabilitiesXMLResult" time="0.878" />
 
-      <testcase classname="WaveRobotBaseControllerTests" name="testRobotProfile" time="0.017" />
+      <testcase classname="WaveRobotBaseControllerTests" name="testRobotProfile" time="0.043" />
 
       <system-out><![CDATA[--Output from testCapabilitiesXMLwithoutActiveRobot--
 --Output from testCapabilitiesXMLResult--
@@ -99,7 +99,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:117)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:121)
-	at org.grails.plugins.wave.WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy:75)
+	at WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy:74)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -109,7 +109,7 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:143)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:151)
-	at org.grails.plugins.wave.WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy)
+	at WaveRobotBaseController$_closure1.doCall(WaveRobotBaseController.groovy)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -523,10 +523,10 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="3" name="WaveRobotFiltersTests" package="" tests="1" time="0.0040" timestamp="2009-10-23T14:29:04">
+  <testsuite errors="0" failures="0" hostname="david.local" id="3" name="WaveRobotFiltersTests" package="" tests="1" time="0.012" timestamp="2009-10-26T11:28:11">
       <properties />
 
-      <testcase classname="WaveRobotFiltersTests" name="testSomething" time="0.0040" />
+      <testcase classname="WaveRobotFiltersTests" name="testSomething" time="0.011" />
 
       <system-out><![CDATA[--Output from testSomething--
 ]]></system-out>
@@ -535,22 +535,44 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="4" name="WaveServiceTests" package="" tests="4" time="0.061" timestamp="2009-10-23T14:29:15">
+  <testsuite errors="0" failures="1" hostname="david.local" id="4" name="WaveServiceTests" package="" tests="4" time="0.184" timestamp="2009-10-26T11:29:03">
       <properties />
 
-      <testcase classname="WaveServiceTests" name="testRobotWithoutRobotImpl" time="0.033" />
+      <testcase classname="WaveServiceTests" name="testRobotWithoutRobotImpl" time="0.038" />
 
       <testcase classname="WaveServiceTests" name="testSimpleRobotRetrieval" time="0.0020" />
 
-      <testcase classname="WaveServiceTests" name="testRobotRetrievalWithCustomBean" time="0.011" />
+      <testcase classname="WaveServiceTests" name="testRobotRetrievalWithCustomBean" time="0.016" />
 
-      <testcase classname="WaveServiceTests" name="testRobotRetrievalWithConfiguredBean" time="0.0010" />
+      <testcase classname="WaveServiceTests" name="testRobotRetrievalWithConfiguredBean" time="0.118">
+          <failure message="expected:&lt;[testRobotImpl]Service&gt; but was:&lt;[myRobot]Service&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;[testRobotImpl]Service&gt; but was:&lt;[myRobot]Service&gt;
+	at WaveServiceTests.testRobotRetrievalWithConfiguredBean(WaveServiceTests.groovy:55)
+	at _GrailsTest_groovy$_run_closure4.doCall(_GrailsTest_groovy:203)
+	at _GrailsTest_groovy$_run_closure4.call(_GrailsTest_groovy)
+	at _GrailsTest_groovy$_run_closure2.doCall(_GrailsTest_groovy:147)
+	at _GrailsTest_groovy$_run_closure1_closure19.doCall(_GrailsTest_groovy:113)
+	at _GrailsTest_groovy$_run_closure1.doCall(_GrailsTest_groovy:96)
+	at TestApp$_run_closure1.doCall(TestApp.groovy:66)
+	at gant.Gant$_dispatch_closure4.doCall(Gant.groovy:324)
+	at gant.Gant$_dispatch_closure6.doCall(Gant.groovy:334)
+	at gant.Gant$_dispatch_closure6.doCall(Gant.groovy)
+	at gant.Gant.withBuildListeners(Gant.groovy:344)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at gant.Gant.dispatch(Gant.groovy:334)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at gant.Gant.processTargets(Gant.groovy:495)
+	at gant.Gant.processTargets(Gant.groovy:480)
+</failure>
+
+      </testcase>
 
       <system-out><![CDATA[--Output from testRobotWithoutRobotImpl--
 --Output from testSimpleRobotRetrieval--
 --Output from testRobotRetrievalWithCustomBean--
-loaded robot TestRobotImplService@5f9b1a0d--Output from testRobotRetrievalWithConfiguredBean--
-loaded robot TestRobotImplService@5f9b1a0d]]></system-out>
+loaded robot TestRobotImplService@30f40e7f--Output from testRobotRetrievalWithConfiguredBean--
+]]></system-out>
 
       <system-err><![CDATA[--Output from testRobotWithoutRobotImpl--
 org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'myRobotService' is defined
@@ -2217,10 +2239,10 @@ org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named '
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="david.local" id="5" name="WaveUrlMappingTests" package="" tests="1" time="0.566" timestamp="2009-10-23T14:29:15">
+  <testsuite errors="0" failures="0" hostname="david.local" id="5" name="WaveUrlMappingTests" package="" tests="1" time="0.559" timestamp="2009-10-26T11:29:04">
       <properties />
 
-      <testcase classname="WaveUrlMappingTests" name="testRobotUrlMappings" time="0.563" />
+      <testcase classname="WaveUrlMappingTests" name="testRobotUrlMappings" time="0.467" />
 
       <system-out><![CDATA[--Output from testRobotUrlMappings--
 ]]></system-out>

@@ -50,7 +50,7 @@ class WaveServiceTests extends GroovyTestCase {
 	
 	void testRobotRetrievalWithConfiguredBean() {
 		
-		CH.config.grails.plugin.wave.robotBeanName = "testRobotImplService"  
+		CH.config.grails.plugins.wave.robotBeanName = "testRobotImplService"  
 		def wave = new WaveService() 
 		assertEquals "testRobotImplService", wave.robotBeanName 
 		assert wave.hasActiveRobot()

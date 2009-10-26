@@ -1,4 +1,0 @@
---Output from testRobotWithoutRobotImpl--
---Output from testSimpleRobotRetrieval--
---Output from testRobotRetrievalWithCustomBean--
-loaded robot TestRobotImplService@30f40e7f--Output from testRobotRetrievalWithConfiguredBean--

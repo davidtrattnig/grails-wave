@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="david.local" name="WaveUrlMappingTests" tests="1" time="0.559" timestamp="2009-10-26T11:29:04">
-  <properties />
-  <testcase classname="WaveUrlMappingTests" name="testRobotUrlMappings" time="0.467" />
-  <system-out><![CDATA[--Output from testRobotUrlMappings--
-]]></system-out>
-  <system-err><![CDATA[--Output from testRobotUrlMappings--
-]]></system-err>
-</testsuite>

@@ -16,7 +16,7 @@ import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
 
 /**
  * WaveEmbedTagLib
- * 
+ * <p>
  * @author david.trattnig
  */
 class WaveEmbedTagLib {
@@ -24,13 +24,13 @@ class WaveEmbedTagLib {
 	/** 
 	 * Tag which has to be included in the head of a page 
      * necessary to correctly load and embed waves.
-	 *
-	 * @provider wave provider url; by default value of config.grails.plugin.wave.defaultProvider
+	 * <p>
+	 * @provider wave provider url; by default value of config.grails.plugins.wave.defaultProvider
      */
 	def waveHead = { attrs ->
 		
-		def waveEmbedAPI = CH.config.grails.plugin.wave.embedAPI
-		def provider = attrs?.provider ?: CH.config.grails.plugin.wave.defaultProvider
+		def waveEmbedAPI = CH.config.grails.plugins.wave.embedAPI
+		def provider = attrs?.provider ?: CH.config.grails.plugins.wave.defaultProvider
 		out << "<script src=\"${waveEmbedAPI}\" type=\"text/javascript\"></script>"
 		out << """\
 			<script type=\"text/javascript\">
@@ -46,10 +46,14 @@ class WaveEmbedTagLib {
 	/**
 	 * Tag which actually renders the wave in form of an
 	 * iframe in a newly created div#id container
-	 *
-	 * @id the id of the wave container (created div tag).
-	 * @waveId the id of the wave (*)
-	 * @style the style (e.g. width, height) of the rendered div container
+	 * <p>
+	 * @waveId the id of the wave (mandatory)
+	 * @id the id of the div-container generated to hold the wave (optional).
+	 * @style the style (e.g. width, height) of the rendered div container (optional)
+	 * @bgcolor the background-color (optional)
+	 * @color the font color (optional)
+	 * @font the font-family (optional)
+	 * @fontsize the font size (optional)
 	 */
 	def waveEmbed = { attrs ->
 

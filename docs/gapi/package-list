@@ -1,10 +1,11 @@
 DefaultPackage
 grails-app.conf
 grails-app.controllers
-grails-app.services.org.bitfusion.grails.wave
+grails-app.services
+grails-app.services.org.grails.plugins.wave
 grails-app.taglib
 scripts
-src.java.java.org.bitfusion.grails.wave
+src.java.org.grails.plugins.wave
 src.templates.services
 test.integration
 test.unit

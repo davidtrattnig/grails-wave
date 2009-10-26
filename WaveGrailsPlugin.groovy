@@ -27,12 +27,12 @@ A plugin that integrates the Google Wave API with Grails"
     def doWithSpring = {
 
 		def config = ConfigurationHolder.getConfig()
-		if(!config.grails.plugin.wave.defaultProvider) {
-		 	//config.grails.plugin.wave.defaultProvider="http://wave.google.com/a/wavesandbox.com/"
-			config.grails.plugin.wave.defaultProvider="https://wave.google.com/wave/"
+		if(!config.grails.plugins.wave.defaultProvider) {
+		 	//config.grails.plugins.wave.defaultProvider="http://wave.google.com/a/wavesandbox.com/"
+			config.grails.plugins.wave.defaultProvider="https://wave.google.com/wave/"
 		}
-		if(!config.grails.plugin.wave.embedAPI) {
-			config.grails.plugin.wave.embedAPI="https://wave-api.appspot.com/public/embed.js"
+		if(!config.grails.plugins.wave.embedAPI) {
+			config.grails.plugins.wave.embedAPI="https://wave-api.appspot.com/public/embed.js"
 		}
     }
 

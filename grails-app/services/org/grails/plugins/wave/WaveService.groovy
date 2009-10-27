@@ -17,12 +17,13 @@ package org.grails.plugins.wave
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
 import org.codehaus.groovy.grails.commons.ApplicationHolder as AH
 import org.springframework.beans.factory.NoSuchBeanDefinitionException
+import java.util.regex.Matcher
 
 /**
  * WaveService
  * 
  * Default Service to interact with wave and entry point
- * to retieve robot implementations.
+ * to retrieve robot implementations.
  * 
  * @author: david.trattnig
  */
@@ -114,5 +115,32 @@ class WaveService {
 	public String setRobotBeanName(String name) {
 		robotBeanName = name
 		log.debug "set robotBeanName to '${name}'"
+	}
+	
+	/**
+	 * Extracts and decodes a waveId from the given Wave URL 
+	 * 
+	 * @param waveUrl
+	 */
+	public String extractWaveId(String waveUrl) {
+		
+		def waveId=null
+		
+		//The wave url is double-encoded
+		2.times {
+			waveUrl = URLDecoder.decode(waveUrl)
+		}		
+		//It should match following part "wave:googlewave.com!w+h4UDikrUI.8"
+		Matcher matcher = (waveUrl =~ /wave:(.*)\.(.*)\!(.*)\.?(\d+)?/ )
+		log.debug "found ${matcher.count} matches for url '${waveUrl}'"
+		
+		if (matcher.count==1) {
+			waveId = matcher[0][0].split(":")[1]
+			log.debug "extracted wave id '${waveId}'"
+		} else {
+			log.warn "tried to extract waveId from a non-wave url!"
+		}
+		
+		return waveId
 	}
 }

@@ -12,13 +12,13 @@ class MyRobotService implements GrailsWaveRobot {
 
 	/**
 	 * Set these properties for your custom robot. 
-	 * keep in mind to remove capabilities from the 
+	 * Keep in mind to remove capabilities from the 
 	 * list below which your robot has not implemented.
 	 */
     static robotName = "Robot Name"
 	static robotVersion = "0.1"
-	static imageUrl = "http://"
-	static profileUrl = "http://"
+	static imageUrl = "http://${CH.config.google.appengine.application}.appspot.com/images/robot.jpg"
+	static profileUrl = "http://${CH.config.google.appengine.application}.appspot.com"
 	static robotCapabilities = [EventType.WAVELET_BLIP_CREATED,
 								EventType.WAVELET_BLIP_REMOVED,
 								EventType.WAVELET_PARTICIPANTS_CHANGED,

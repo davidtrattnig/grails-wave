@@ -7,45 +7,37 @@ import org.grails.plugins.wave.WaveService
 class WaveServiceTests extends GroovyTestCase {
     protected void setUp() {
         super.setUp()
+        //mockLogging(WaveService.class, true)
     }
 
     protected void tearDown() {
         super.tearDown()
     }
+	
+	/** there is one existing robot services which should be auto-mapped */
+	void testRobotRetrievalByType() {
 
-	void testExtractWaveIdFromUrl() {
-		
-		def ws = new WaveService()
-		def waveUrl="", waveId=""
-		
-		waveId = ws.extractWaveId(waveUrl)
-		assertNull waveId
-		
-		waveUrl = "https://wave.google.com/wave/wave:googlewave.com!w%252Bh4UDikrUI.8"
-		waveId = ws.extractWaveId(waveUrl)
-		assertEquals "googlewave.com!w+h4UDikrUI.8", waveId
-		
-		waveUrl = "https://wave.google.com/wave/wave:googlewave.com!w%252Bh4UDikrUI"
-		waveId = ws.extractWaveId(waveUrl)
-		assertEquals "googlewave.com!w+h4UDikrUI", waveId
-		
-		waveUrl = "https://wave.google.com/wave/wave:googlewave.com!w%252Bh4UDikrUI.888"
-		waveId = ws.extractWaveId(waveUrl)
-		assertEquals "googlewave.com!w+h4UDikrUI.888", waveId
+		def wave = getWaveService()
+		assertNotNull wave
+		//assertEquals "TestRobotImplService", wave.robotBeanName
+		assertNotNull wave.robot
 	}
 	
 	void testRobotWithoutRobotImpl() {
 		
-		def wave = new WaveService()
-		assertNull wave.robot
+		//there is a auto-wired TestRobotImplService..
+		def wave = getWaveService()
+		assertNotNull wave.robot
 		
+		//remove the single robot instance from the context
+		wave.robot = null
 		assert false == wave.hasActiveRobot()
 		assertNull wave.robot
 	}
 	
 	void testSimpleRobotRetrieval() {
 		
-		def wave = new WaveService()
+		def wave = getWaveService()
 		wave.robot = new TestRobotImplService()
 		
 		assert wave.robot
@@ -59,11 +51,13 @@ class WaveServiceTests extends GroovyTestCase {
 	
 	void testRobotRetrievalWithCustomBean() {
 		
-		def wave = new WaveService()
-		assertNull wave.robot
-		assertEquals WaveService.DEFAULT_ROBOT_BEAN_NAME, wave.robotBeanName
+		def robotBeanName = CH.config.grails.plugins.wave.robotBeanName
+		def wave = getWaveService()
 		
-		wave.robotBeanName = "testRobotImplService"
+		wave.robot = null
+		assertNull wave.robotBeanName
+	
+		wave.robotByBeanName = "testRobotImplService"
 		assert "testRobotImplService", wave.robotBeanName
 		assert true == wave.hasActiveRobot()
 		assertNotNull wave.robot
@@ -72,9 +66,18 @@ class WaveServiceTests extends GroovyTestCase {
 	void testRobotRetrievalWithConfiguredBean() {
 		
 		CH.config.grails.plugins.wave.robotBeanName = "testRobotImplService"  
-		def wave = new WaveService()
+		def wave = getWaveService()
 		assertEquals "testRobotImplService", wave.robotBeanName 
 		assert wave.hasActiveRobot()
 		assertNotNull wave.robot
+	}
+	
+	
+	/*utils*/
+	
+	private WaveService getWaveService() {
+		def appContext = AH.application.getMainContext()
+		//(new GrailsWavePlugin()).doWithApplicationContext(appContext)
+		return appContext.getBean("waveService")
 	}
 }

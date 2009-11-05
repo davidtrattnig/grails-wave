@@ -1,8 +1,11 @@
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
+import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
+import org.springframework.beans.factory.support.DefaultListableBeanFactory
+import org.grails.plugins.wave.GrailsWaveRobot
+import org.grails.plugins.wave.*
 
 class WaveGrailsPlugin {
     // the plugin version
-    def version = "0.3"
+    def version = "0.4"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.1.1 > *"
     // the other plugins this plugin depends on
@@ -12,7 +15,7 @@ class WaveGrailsPlugin {
 	    "grails-app/views/error.gsp",
 		"lib/tagsoup-1.2.jar",
 		"lib/svnkit.jar",
-		"grails-app/service/TestRobotService.groovy"
+		"grails-app/services/TestRobotImplService.groovy"
     ]
 
     def author = "David Trattnig"
@@ -26,18 +29,38 @@ A plugin that integrates the Google Wave API with Grails"
 
     def doWithSpring = {
 
-		def config = ConfigurationHolder.getConfig()
-		if(!config.grails.plugins.wave.defaultProvider) {
+		if(!CH.config.grails.plugins.wave.defaultProvider) {
 		 	//config.grails.plugins.wave.defaultProvider="http://wave.google.com/a/wavesandbox.com/"
-			config.grails.plugins.wave.defaultProvider="https://wave.google.com/wave/"
+			CH.config.grails.plugins.wave.defaultProvider="https://wave.google.com/wave/"
 		}
-		if(!config.grails.plugins.wave.embedAPI) {
-			config.grails.plugins.wave.embedAPI="https://wave-api.appspot.com/public/embed.js"
+		if(!CH.config.grails.plugins.wave.embedAPI) {
+			CH.config.grails.plugins.wave.embedAPI="https://wave-api.appspot.com/public/embed.js"
 		}
     }
 
-    def doWithApplicationContext = { applicationContext ->
-        // TODO Implement post initialization spring config (optional)
+    def doWithApplicationContext = { appContext ->
+
+		def waveService = appContext.getBean("waveService")			
+		def robotBeanName = CH.config.grails.plugins.wave.robotBeanName
+		
+		if (robotBeanName) {
+			waveService.robotByBeanName = robotBeanName
+			log.info "initialized robotBeanName '${robotBeanName}' from config property"
+		} else {		
+			def services = application.serviceClasses
+			def robots = services.reference.wrappedInstance.grep{ it instanceof GrailsWaveRobot }
+			
+			if (robots) {
+				if (robots.size()==1) {	
+					waveService.robot = robots.first()
+					log.info "initialized robotBean '${waveService.robot}' by object type query"		
+				} else {
+					log.warn "multiple robots available (${robots.size()}) - set the prop 'grails.plugins.wave.robotBeanName' to your active robot bean name."
+				}
+			} else {
+				log.info "no wave robot bean/name defined. robot message handling disabled."
+			}
+		}
     }
 
     def doWithWebDescriptor = { xml ->

@@ -1,8 +1,10 @@
 import grails.test.*
+import org.grails.plugins.wave.WaveUtils
 
 class WaveEmbedTagLibTests extends TagLibUnitTestCase {
 	
 	def final VALID_WAVE_ID = "wavesandbox.com!w+GqEj91kE%F"
+	def final VALID_WAVE_URL = "https://wave.google.com/wave/wave:googlewave.com!w%252Bh4UDikrUI"
 	def final VALID_PROVIDER = "https://wave.google.com/a/wavesandbox.com/"
 	
     protected void setUp() {
@@ -37,6 +39,7 @@ class WaveEmbedTagLibTests extends TagLibUnitTestCase {
 			System.out.println "scriptLine:"+it
 		}
 		assertEquals 4, response.script.size()
+		//TODO improve test .. regex matcher
     }
 
 	void testWaveEmbedInvalid() {
@@ -57,6 +60,25 @@ class WaveEmbedTagLibTests extends TagLibUnitTestCase {
 		assertNotNull res
 		def div = new XmlSlurper(new org.ccil.cowan.tagsoup.Parser()).parseText(res.toString())
 		assertNotNull div
+	}
+	
+	void testWaveEmbedByURL() {
+		def tmplId = WaveUtils.extractWaveId(VALID_WAVE_URL)
+		def we = new WaveEmbedTagLib()
+		
+		//create wave with default frame id
+		def res = we.waveEmbed(waveUrl:VALID_WAVE_URL)
+		assertNotNull res
+		def html = new XmlSlurper(new org.ccil.cowan.tagsoup.Parser()).parseText(res.toString())
+		assertNotNull html
+		println "html:${html.text()}"
+		
+		assertNotNull html.div
+		assertNotNull html.script
+		
+		def matcher = ( html =~ /.*loadWave\(.(.*).,.*\)/ )
+		println "matcher size: ${matcher?.size()}"
+		assertEquals tmplId, matcher[0][1].split("\"")[0]
 	}
 
 	void testWaveEmbedWithCustomFrame() {

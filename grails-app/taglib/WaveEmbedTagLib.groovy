@@ -13,13 +13,15 @@
  * limitations under the License.
  */
 import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
+import org.grails.plugins.wave.WaveUtils
 
 /**
- * WaveEmbedTagLib
+ * {@link WaveEmbedTagLib}
  * <p>
  * @author david.trattnig
  */
 class WaveEmbedTagLib {
+	
 	
 	/** 
 	 * Tag which has to be included in the head of a page 
@@ -47,7 +49,8 @@ class WaveEmbedTagLib {
 	 * Tag which actually renders the wave in form of an
 	 * iframe in a newly created div#id container
 	 * <p>
-	 * @waveId the id of the wave (mandatory)
+	 * @waveId the id of the wave (set either this or waveUrl)
+	 * @waveUrl the url of the wave (set either this or waveId)
 	 * @id the id of the div-container generated to hold the wave (optional).
 	 * @style the style (e.g. width, height) of the rendered div container (optional)
 	 * @bgcolor the background-color (optional)
@@ -58,13 +61,19 @@ class WaveEmbedTagLib {
 	def waveEmbed = { attrs ->
 
 		def waveId = attrs?.waveId
+		def waveUrl = attrs?.waveUrl
+
+		if (!waveId && waveUrl) {
+			waveId = WaveUtils.extractWaveId(waveUrl)
+		}
+		
 		if (waveId) {
 			def divId = attrs?.id ? attrs?.id : "wavebox_${waveId.hashCode()}"
 			def style = attrs.style ? "style=\"${attrs.style}\"" : ""
 			
 			out << "<div id=\"${divId}\" class=\"wavebox\" ${style}></div>"
 			out << '<script type="text/javascript">'
-			out << "loadWave(\"${attrs?.waveId}\", \"${divId}\", \"${attrs?.bgcolor}\", \"${attrs?.color}\", \"${attrs?.font}\", \"${attrs?.fontsize}\");"
+			out << "loadWave(\"${waveId}\", \"${divId}\", \"${attrs?.bgcolor}\", \"${attrs?.color}\", \"${attrs?.font}\", \"${attrs?.fontsize}\");"
 			out << '</script>'
 		} else {
 			log.error "missing wave id while embedding wave"

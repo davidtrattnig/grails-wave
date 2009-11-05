@@ -1,13 +1,14 @@
+@artifact.package@
 import org.grails.plugins.wave.*
 import com.google.wave.api.*
 
 /**
- * {@link MyRobotService}
+ * {@link @artifact.name@}
  *
- * Robot Template Implementation
+ * A Wave robot implementation
  */
-class MyRobotService implements GrailsWaveRobot {
-
+class @artifact.name@ implements GrailsWaveRobot {
+	
     boolean transactional = true
 
 	/**
@@ -15,7 +16,7 @@ class MyRobotService implements GrailsWaveRobot {
 	 * Keep in mind to remove capabilities from the 
 	 * list below which your robot has not implemented.
 	 */
-    static robotName = "Robot Name"
+    static robotName = "Untitled Robot"
 	static robotVersion = "0.1"
 	static imageUrl = "http://${CH.config.google.appengine.application}.appspot.com/images/robot.jpg"
 	static profileUrl = "http://${CH.config.google.appengine.application}.appspot.com"

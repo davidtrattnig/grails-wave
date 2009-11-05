@@ -31,62 +31,35 @@ class WaveService {
 	
 	boolean transactional = true
 	
+	@Deprecated
 	public static final String DEFAULT_ROBOT_BEAN_NAME = "myRobotService"
-	private String robotBeanName
-	public GrailsWaveRobot robot = null
-	
-	/**
-	 * Default constructor for WaveService
-	 */
-	public WaveService() {
-		
-		def name = CH.config.grails.plugins.wave.robotBeanName
-		if (name) {
-			robotBeanName = name
-			log.debug "initialized robotBeanName from config property"
-		} else {
-			robotBeanName = DEFAULT_ROBOT_BEAN_NAME
-		}
-	}
+
+	private String robotBeanName = null
+	private GrailsWaveRobot robot = null
 	
 	/**
 	 * Retrieves a bean of the assigned robot implementation.
 	 * <code>Null</code> if no implementation is set (robot disabled).
+	 * When dealing with a robot implementation keep in mind to check
+	 * if robot functionality is activated (property robotActive=true)
 	 */
-	public GrailsWaveRobot getRobot() {
-
-		if (!robot) {
-			def name = getRobotBeanName()
-			if (name) {
-				log.info "no robot assigned - querying default robot bean..."
-				def appContext = AH.application.getMainContext() 
-				
-				try {
-					robot = appContext.getBean(name)
-					log.info "loaded robot service bean ${name}"
-					print "loaded robot $robot"
-				} catch(NoSuchBeanDefinitionException e) {
-					log.warn "artefact ${name} could not be loaded!"
-					e.printStackTrace()
-				}
-			} else {
-				log.error "no robotBeanName defined!"
-			}
-		}
-		
-		log.debug "retrieving robot ${robot}..."
+	public GrailsWaveRobot getRobot() {		
 		return robot
-	}
+	} 
 	
 	/**
-	 * Sets the current robot implementation
+	 * Sets the current robot implementation. The robot is not
+	 * activated by default. Set the property robotActive=true
+	 * to enable robot functionality being processed.
 	 *
 	 * @param robot the robot object
 	 */
 	public void setRobot(GrailsWaveRobot robot) {
 		this.robot = robot
+		log.info "activated robot ${robot}"
 	}
 
+	
 	/**
 	 * Returns true in case an robot implementation is assigned;
 	 * the robot is active.
@@ -96,13 +69,27 @@ class WaveService {
 	}
 
 	/**
-	 * Returns the name of the spring bean holding the 
-	 * robot implementation. By default the name is looked up in the
-	 * configuration property <code>grails.plugin.wave.robotImplBeanName</code>
-	 * and otherwise can be set programmatically via the respective setter
+	 * Returns the name of the spring bean name holding the 
+	 * robot implementation. 
 	 */
+	@Deprecated
 	public String getRobotBeanName() {						
 		return robotBeanName
+	}
+	
+	/**
+	 * Sets the robot implementation bean name.
+	 * An alternative way is to set the name in your Grails config file on
+	 * the property <code>grails.plugin.wave.robotBeanName</code>
+	 * 
+	 * @param name the name of the bean to be used as robot implementation
+	 * @deprecated use <code>setRobotByBeanName</code> instead
+	 */
+	@Deprecated
+	public String setRobotBeanName(String name) {
+		robotBeanName = name
+		log.debug "set robotBeanName to '${name}'"
+		initRobotByBeanName()
 	}
 	
 	/**
@@ -112,35 +99,27 @@ class WaveService {
 	 * 
 	 * @param name the name of the bean to be used as robot implementation
 	 */
-	public String setRobotBeanName(String name) {
+	public String setRobotByBeanName(String name) {
 		robotBeanName = name
 		log.debug "set robotBeanName to '${name}'"
+		initRobotByBeanName(name)
 	}
 	
-	/**
-	 * Extracts and decodes a waveId from the given Wave URL 
-	 * 
-	 * @param waveUrl
-	 */
-	public String extractWaveId(String waveUrl) {
+	//TODO add custom exception
+	private void initRobotByBeanName(String name) throws NoSuchBeanDefinitionException {
 		
-		def waveId=null
+		if (!name) throw new NoSuchBeanDefinitionException("Invalid robot bean name <null>")
 		
-		//The wave url is double-encoded
-		2.times {
-			waveUrl = URLDecoder.decode(waveUrl)
+		log.info "no robot assigned - querying default robot bean..."
+		def appContext = AH.application.getMainContext() 
+		
+		try {
+			robot = appContext.getBean(name)
+			log.info "loaded robot service bean ${name}"
+			print "loaded robot $robot"
+		} catch(NoSuchBeanDefinitionException e) {
+			log.error "artefact ${name} could not be loaded!", e
+			throw e
 		}		
-		//It should match following part "wave:googlewave.com!w+h4UDikrUI.8"
-		Matcher matcher = (waveUrl =~ /wave:(.*)\.(.*)\!(.*)\.?(\d+)?/ )
-		log.debug "found ${matcher.count} matches for url '${waveUrl}'"
-		
-		if (matcher.count==1) {
-			waveId = matcher[0][0].split(":")[1]
-			log.debug "extracted wave id '${waveId}'"
-		} else {
-			log.warn "tried to extract waveId from a non-wave url!"
-		}
-		
-		return waveId
 	}
 }

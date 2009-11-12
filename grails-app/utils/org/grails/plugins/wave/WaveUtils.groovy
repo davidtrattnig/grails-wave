@@ -46,6 +46,7 @@ class WaveUtils {
 		
 		if (matcher.count==1) {
 			waveId = matcher[0][0].split(":")[1]
+			waveId = waveId.replaceAll(/\.\d+/, "") //remove revision id
 		} else {
 			//log.warn "tried to extract waveId from a non-wave url!"
 		}

@@ -13,6 +13,7 @@ A plugin that integrates the Google Wave API with Grails"
     <resource>org.grails.plugins.wave.WaveService</resource>
     <resource>TestRobotImplService</resource>
     <resource>WaveEmbedTagLib</resource>
+    <resource>org.grails.plugins.wave.WaveUtils</resource>
   </resources>
   <dependencies />
 </plugin>

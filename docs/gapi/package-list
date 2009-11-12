@@ -4,8 +4,8 @@ grails-app.controllers
 grails-app.services
 grails-app.services.org.grails.plugins.wave
 grails-app.taglib
+grails-app.utils.org.grails.plugins.wave
 scripts
 src.java.org.grails.plugins.wave
-src.templates.services
 test.integration
 test.unit

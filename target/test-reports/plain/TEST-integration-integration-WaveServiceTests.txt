@@ -1,0 +1,22 @@
+Testsuite: WaveServiceTests
+Tests run: 5, Failures: 0, Errors: 0, Time elapsed: 0,041 sec
+------------- Standard Output ---------------
+--Output from testRobotRetrievalByType--
+--Output from testRobotWithoutRobotImpl--
+--Output from testSimpleRobotRetrieval--
+--Output from testRobotRetrievalWithCustomBean--
+loaded robot TestRobotImplService@14eda77--Output from testRobotRetrievalWithConfiguredBean--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testRobotRetrievalByType--
+--Output from testRobotWithoutRobotImpl--
+--Output from testSimpleRobotRetrieval--
+--Output from testRobotRetrievalWithCustomBean--
+--Output from testRobotRetrievalWithConfiguredBean--
+------------- ---------------- ---------------
+
+Testcase: testRobotRetrievalByType took 0,002 sec
+Testcase: testRobotWithoutRobotImpl took 0,001 sec
+Testcase: testSimpleRobotRetrieval took 0,002 sec
+Testcase: testRobotRetrievalWithCustomBean took 0,006 sec
+Testcase: testRobotRetrievalWithConfiguredBean took 0,001 sec

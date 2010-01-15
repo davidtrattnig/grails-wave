@@ -1,0 +1,5 @@
+--Output from testWaveHead--
+--Output from testWaveEmbedInvalid--
+--Output from testWaveEmbedGeneral--
+--Output from testWaveEmbedByURL--
+--Output from testWaveEmbedWithCustomFrame--

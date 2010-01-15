@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="david.local" name="WaveUtilsTests" tests="1" time="0.02" timestamp="2010-01-15T01:21:25">
+  <properties />
+  <testcase classname="WaveUtilsTests" name="testExtractWaveIdFromURL" time="0.02" />
+  <system-out><![CDATA[--Output from testExtractWaveIdFromURL--
+]]></system-out>
+  <system-err><![CDATA[--Output from testExtractWaveIdFromURL--
+]]></system-err>
+</testsuite>

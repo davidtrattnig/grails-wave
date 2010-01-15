@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="david.local" name="TestRobotImplServiceTests" tests="1" time="0.568" timestamp="2010-01-15T01:21:22">
+  <properties />
+  <testcase classname="TestRobotImplServiceTests" name="testRobotImpl" time="0.56" />
+  <system-out><![CDATA[--Output from testRobotImpl--
+INFO (TestRobotImplService): ROBOT Robbie ro Bot (v1.0): PROCESS EVENTS
+INFO (TestRobotImplService): eventsBundle - null
+]]></system-out>
+  <system-err><![CDATA[--Output from testRobotImpl--
+]]></system-err>
+</testsuite>

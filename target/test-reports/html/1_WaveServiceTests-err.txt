@@ -1,0 +1,6 @@
+--Output from testRobotRetrievalByType--
+--Output from testRobotWithoutRobotImpl--
+--Output from testSimpleRobotRetrieval--
+--Output from testRobotRetrievalWithCustomBean--
+--Output from testRobotRetrievalWithConfiguredBean--
+

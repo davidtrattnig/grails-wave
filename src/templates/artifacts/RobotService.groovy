@@ -1,6 +1,7 @@
 @artifact.package@
 import org.grails.plugins.wave.*
 import com.google.wave.api.*
+import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
 
 /**
  * {@link @artifact.name@}
@@ -36,7 +37,7 @@ class @artifact.name@ implements GrailsWaveRobot {
 								EventType.DOCUMENT_CHANGED,
 								EventType.FORM_BUTTON_CLICKED]
 	
-    public void processEvents(RobotMessageBundle eventsBundle) {
+    public void processEvents(RobotMessageBundle bundle) {
 
 		// place your robot implementation here ...
     }

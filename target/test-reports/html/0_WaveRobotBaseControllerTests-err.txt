@@ -1,4 +1,0 @@
---Output from testCapabilitiesXMLwithoutActiveRobot--
---Output from testCapabilitiesXMLResult--
---Output from testRobotProfile--
-

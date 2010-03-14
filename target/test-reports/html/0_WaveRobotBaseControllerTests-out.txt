@@ -1,7 +1,0 @@
---Output from testCapabilitiesXMLwithoutActiveRobot--
---Output from testCapabilitiesXMLResult--
-tem:<?xmlversion="1.0"?><w:robotxmlns:w='http://wave.google.com/extensions/robots/1.0'><w:capabilities><w:capabilityname='BLIP_SUBMITTED'/></w:capabilities><w:profilename='RobbieroBot'imageurl='http://image.url'profileurl='http://test.profile'/><w:version>1.0</w:version></w:robot>
-res:<?xmlversion="1.0"?><w:robotxmlns:w='http://wave.google.com/extensions/robots/1.0'><w:capabilities><w:capabilityname='BLIP_SUBMITTED'/></w:capabilities><w:profilename='RobbieroBot'imageurl='http://image.url'profileurl='http://test.profile'/><w:version>1.0</w:version></w:robot>
---Output from testRobotProfile--
-profile response: {"profileUrl":"http://test.profile","imageUrl":"http://image.url","name":"Robbie ro Bot"}
-

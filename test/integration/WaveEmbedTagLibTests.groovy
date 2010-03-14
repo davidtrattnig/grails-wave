@@ -1,4 +1,7 @@
 import grails.test.*
+import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
+import org.codehaus.groovy.grails.plugins.PluginManagerHolder as PMH
+import org.codehaus.groovy.grails.plugins.web.taglib.JavascriptTagLib             
 import org.grails.plugins.wave.WaveUtils
 
 class WaveEmbedTagLibTests extends TagLibUnitTestCase {
@@ -16,13 +19,15 @@ class WaveEmbedTagLibTests extends TagLibUnitTestCase {
     }
 
     void testWaveHead() {
-		mockConfig '''
-		            grails.plugin.wave.embedAPI = "http://embed.API"
-					grails.plugin.wave.defaultProvider = "http://default.provider"
-		        '''
+
+		CH.config.grails.plugins.wave.embedAPI = "http://embed.API"  
+		
+		assertNotNull PMH.pluginManager
+		JavascriptTagLib.metaClass.static.getPluginManager = {PMH.pluginManager}
+		assertNotNull JavascriptTagLib.pluginManager
 		
 		def we = new WaveEmbedTagLib()
-				
+		
 		//create tag without provider attribute
 		def res = we.waveHead()
 		assertNotNull res
@@ -31,15 +36,12 @@ class WaveEmbedTagLibTests extends TagLibUnitTestCase {
 		res = we.waveHead(provider:VALID_PROVIDER)
 		assertNotNull res
 		
-		//check if the required html tags are available
-		//there should be 4 <script> tags (waveHead has called twice)
+		println res.toString()
+
+		//there should be three "script" tags
 		def response = new XmlSlurper(new org.ccil.cowan.tagsoup.Parser()).parseText(res.toString())
 		assertNotNull response
-		response.script.each {
-			System.out.println "scriptLine:"+it
-		}
-		assertEquals 4, response.script.size()
-		//TODO improve test .. regex matcher
+		assertEquals 3, response.script.size()
     }
 
 	void testWaveEmbedInvalid() {
@@ -47,7 +49,8 @@ class WaveEmbedTagLibTests extends TagLibUnitTestCase {
 				
 		//create invalid wave
 		def res = we.waveEmbed()
-		assertNull res
+		println res
+		assertEquals 0, res.size()
 		//def div = new XmlSlurper().parseText(res)
 		//assertNull div		
 	}

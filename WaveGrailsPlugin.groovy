@@ -5,7 +5,7 @@ import org.grails.plugins.wave.*
 
 class WaveGrailsPlugin {
     // the plugin version
-    def version = "0.5-SNAPSHOT"
+    def version = "0.5"
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.1.1 > *"
     // the other plugins this plugin depends on

@@ -22,7 +22,8 @@ import org.grails.plugins.wave.WaveUtils
  */
 class WaveEmbedTagLib {
 	
-	
+	static namespace = 'wave'
+		
 	/** 
 	 * Tag which has to be included in the head of a page 
      * necessary to correctly load and embed waves.
@@ -31,18 +32,13 @@ class WaveEmbedTagLib {
      */
 	def waveHead = { attrs ->
 		
+		//def g = new org.codehaus.groovy.grails.plugins.web.taglib.JavascriptTagLib()
+		
 		def waveEmbedAPI = CH.config.grails.plugins.wave.embedAPI
 		def provider = attrs?.provider ?: CH.config.grails.plugins.wave.defaultProvider
 		out << "<script src=\"${waveEmbedAPI}\" type=\"text/javascript\"></script>"
-		out << """\
-			<script type=\"text/javascript\">
-				function loadWave(waveId, frameId, bgcolor, color, font, fontsize) {
-	    			var wavePanel = new WavePanel(\"${provider}\");
-					wavePanel.loadWave(waveId);
-					wavePanel.setUIConfig(bgcolor, color, font, fontsize);
-	    			wavePanel.init(document.getElementById(frameId));
-	    		}
-			</script>"""
+		out << g.javascript() { "var _waveProvider = \"${provider}\";" }
+		out << g.javascript([src:"g-wave.js"])
 	}
 
 	/**
@@ -77,6 +73,7 @@ class WaveEmbedTagLib {
 			out << '</script>'
 		} else {
 			log.error "missing wave id while embedding wave"
+			return null
 		}
 	}
 }
